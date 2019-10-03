@@ -5,14 +5,14 @@ import Navbar from '../components/Navbar.jsx';
 import Footer from '../components/Footer.jsx';
 import Jumbotron from '../components/Jumbotron.jsx';
 
-class About extends Component{
+class Contact extends Component{
   render(){
       return(
         <div>
             <Navbar/>
-            <Jumbotron title=" About us" subtitle="CSUF students that wanted to create something more..." />
+            <Jumbotron title="Welcome to CloudDrop!" subtitle="Powered by our cloud computers to allow you to securely upload/download files!" />
             <div className="container">
-                <h2>About Us</h2>
+                <h2>Contact Us Here!</h2>
                 <p>
                 orem ipsum dolor sit amet, consectetur adipiscing elit
                 , sed do eiusmod tempor incididunt ut labore et dolore
@@ -29,7 +29,9 @@ class About extends Component{
                 ttis. Volutpat odio facilisis mauris sit. Neque ornar
                 e aenean euismod elementum. Viverra justo nec ultrices dui.
                 </p>
-                
+                <p>
+                    THis is just another paragraph just to see how the format wil lcome out to be ignore this plz.
+                </p>
             </div>
             <Footer />
         </div>
@@ -38,4 +40,4 @@ class About extends Component{
   }
 }
 
-export default About
+export default Contact
