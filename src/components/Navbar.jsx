@@ -2,36 +2,30 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import './Navbar.css';
 
-class Navbar extends Component {
+import { Navbar } from 'react-bootstrap';
+import { Nav, Form, FormControl, Button } from 'react-bootstrap';
+
+class Navigation extends Component {
     render() {
         return (
-                <nav className="navbar navbar-expand-md">
-                    <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-                        <span className="navbar-toggler-icon"></span>
-                    </button>
-                    <div className="container">
-                        <Link className="navbar-brand" to="/">CloudDrop</Link>
-                        <div className="collapse navbar-collapse" id="navbarCollapse">
-                            <ul className="navbar-nav ml-auto">
-                                <li className="nav-item active">
-                                    <Link className="nav-link" to="/">Home<span className="sr-only">(current)</span></Link>
-                                </li>
-                                <li className="nav-item">
-                                    <Link className="nav-link" to="/about">About</Link>
-                                </li>
-                                <li className="nav-item">
-                                    <Link className="nav-link" to="/contact">Contact</Link>
-                                </li>
-                                <li className="nav-item">
-                                    <Link className="nav-link" to="/login">Login/New</Link>
-                                </li>
+            
+            <Navbar bg="primary" variant="dark">
+                <Navbar.Brand href="/">Navbar</Navbar.Brand>
+                <Nav className="mr-auto">
+                    <Nav.Link href="/">Home</Nav.Link>
+                    <Nav.Link href="/about">About</Nav.Link>
+                    <Nav.Link href="/contact">Contact</Nav.Link>
+                    <Nav.Link href="/login">Login/New</Nav.Link>
 
-                                
-                            </ul>
-                        </div>
-                    </div>
-                </nav>
-                );
-            }
-        }
-export default Navbar
+                </Nav>
+                <Form inline>
+                    <FormControl type="text" placeholder="Search" className="mr-sm-2" />
+                    <Button variant="outline-light">Search</Button>
+                </Form>
+            </Navbar>
+
+                
+        );
+    }
+}
+export default Navigation

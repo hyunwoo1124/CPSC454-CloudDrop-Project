@@ -4,7 +4,6 @@ import React, {Component} from 'react';
 import Navbar from '../components/Navbar.jsx';
 import Footer from '../components/Footer.jsx';
 import Jumbotron from '../components/Jumbotron.jsx';
-import Carousel from '../components/Carousel.jsx';
 
 class Home extends Component{
   render(){
