@@ -117,3 +117,7 @@ input.error{
     color: #999;
     font-weight: lighter;
 }
+.Login form{
+    margin: 0 auto;
+    max-width: 320px;
+}

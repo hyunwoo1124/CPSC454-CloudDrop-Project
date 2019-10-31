@@ -6,6 +6,7 @@ import './App.css';
 import Home from './pages/Home.jsx';
 import About from './pages/About.jsx';
 import Contact from './pages/Contact.jsx';
+import Create from './pages/CreateLogin.jsx';
 import Login from './pages/Login.jsx';
 
 
@@ -17,6 +18,7 @@ class App extends Component {
           <Route exact path="/" component={Home}/>
           <Route path="/about" component={About}/>
           <Route path="/contact" component={Contact}/>
+          <Route path="/createlogin" component={Create}/>
           <Route path="/login" component={Login}/>
 
         </div>
