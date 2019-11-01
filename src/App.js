@@ -8,6 +8,7 @@ import About from './pages/About.jsx';
 import Contact from './pages/Contact.jsx';
 import Create from './pages/CreateLogin.jsx';
 import Login from './pages/Login.jsx';
+import Dash from './pages/Dash.jsx';
 
 
 class App extends Component {
@@ -20,6 +21,7 @@ class App extends Component {
           <Route path="/contact" component={Contact}/>
           <Route path="/createlogin" component={Create}/>
           <Route path="/login" component={Login}/>
+          <Route path="/dashboard" component={Dash}/>
 
         </div>
       </Router>

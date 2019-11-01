@@ -41,6 +41,7 @@ class Navigation extends Component {
                         <Nav.Item><Nav.Link href="/contact">Contact</Nav.Link></Nav.Item>
                         <Nav.Item><Nav.Link href="/createlogin">Create Account</Nav.Link></Nav.Item>
                         <Nav.Item><Nav.Link href="/login">Login</Nav.Link></Nav.Item>
+                        <Nav.Item><Nav.Link href="/dashboard">Dashboard</Nav.Link></Nav.Item>
 
     
     
