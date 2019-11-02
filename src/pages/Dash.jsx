@@ -12,7 +12,13 @@ const Uppy = require('@uppy/core')
 class Dash extends Component{
     constructor (props){
         super(props)
-        this.uppy = Uppy()
+        this.uppy = Uppy(
+            {
+                restrictions: {
+                    allowedFileTypes: ['image/*']
+                }
+            }
+        )
     }
 
     componentWillUnmount(){
