@@ -4,15 +4,15 @@ import './Footer.css';
 class Footer extends Component {
     render() {
         return (
-            <container>
-            <footer className="footer" >
+            <footer className="footer">
                 <div className="container">
-                    <span className="text-muted">Cloud Drop &#169; {new Date().getFullYear()}</span>
+                    <span className="text-muted">
+                        Cloud Drop &#169; {new Date().getFullYear()}
+                    </span>
                 </div>
-            </footer >
-            </container>
+            </footer>
         );
-    }   
+    }
 }
 
-export default Footer
+export default Footer;
