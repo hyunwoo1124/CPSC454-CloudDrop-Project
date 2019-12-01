@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 
+
 import Footer from '../components/Footer.jsx';
 import Jumbotron from '../components/Jumbotron.jsx';
+import Carousel from '../components/Carousel.jsx';
 
 class Home extends Component {
     render() {
@@ -14,26 +16,16 @@ class Home extends Component {
                 <div className="container">
                     <h2>Welcome to CloudDrop!</h2>
                     <p>
-                        orem ipsum dolor sit amet, consectetur adipiscing elit ,
-                        sed do eiusmod tempor incididunt ut labore et dolore
-                        magna aliqua. Nunc scelerisque viverra mauris in. Dia m
-                        sollicitudin tempor id eu nisl nunc. Massa massa ul
-                        tricies mi quis hendrerit dolor magna. Egestas pretiu m
-                        aenean pharetra magna ac. Adipiscing tristique risu s
-                        nec feugiat in fermentum posuere urna nec. Sit amet
-                        massa vitae tortor condimentum lacinia. Nisl vel pre
-                        tium lectus quam. Erat pellentesque adipiscing commo do
-                        elit at imperdiet dui accumsan. Feugiat nisl preti fusce
-                        id velit ut tortor pretium. Sit amet purus gravi da
-                        quis. Molestie ac feugiat sed lectus vestibulum ma ttis.
-                        Volutpat odio facilisis mauris sit. Neque ornar e aenean
-                        euismod elementum. Viverra justo nec ultrices dui.
+                    The CloudDrop allows user to upload and download files efficiently. Our App is powered by
+                    Node.js framework and AWS! Try our software today!
                     </p>
-                    <p>
-                        THis is just another paragraph just to see how the
-                        format wil lcome out to be ignore this plz.
-                    </p>
+                    
                 </div>
+                <br/>
+                <br/>
+                <Carousel />
+                <br/>
+                <br/>
                 <Footer />
             </div>
         );
