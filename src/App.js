@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { Router, Route } from 'react-router-dom';
 import './App.css';
 import axios from 'axios';
+import history from './utils/history';
 
 import Navbar from './components/Navbar.jsx';
 import Home from './pages/Home.jsx';
@@ -24,11 +25,15 @@ class App extends Component {
     render() {
         const { auth } = this.state;
         return (
-            <Router>
+            <Router history={history}>
                 <div>
                     <Navbar auth={auth} />
                     <Route exact path="/" component={Home} />
-                    <Route exact path="/dashboard" component={Dashboard} />
+                    <Route
+                        exact
+                        path="/dashboard"
+                        render={() => <Dashboard auth={auth} />}
+                    />
                     <Route exact path="/images" component={NewImage} />
                     <Route exact path="/images/:key" component={ImageDetail} />
                     <Route exact path="/shared" component={Shared} />

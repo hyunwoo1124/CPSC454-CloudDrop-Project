@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import styled from 'styled-components';
+import history from '../utils/history';
 
 const StyledDiv = styled.div`
     display: grid;
@@ -22,6 +23,18 @@ const StyledInput = styled.input`
     height: 40px;
     border-radius: 4px;
     padding: 5px;
+`;
+
+const StyledButton = styled.button`
+    width: 150px;
+    margin: 10px auto;
+    border-radius: 4px;
+    background-color: #008aff;
+    color: white;
+
+    :hover {
+        background-color: #42a8ff;
+    }
 `;
 
 const ImageDetail = ({
@@ -49,6 +62,7 @@ const ImageDetail = ({
                 key
             }
         });
+        history.push('/dashboard');
     };
 
     useEffect(() => {
@@ -70,10 +84,10 @@ const ImageDetail = ({
                 onChange={handleChange}
                 value={email}
             />
-            <button type="submit" onClick={handleSubmit}>
+            <StyledButton type="submit" onClick={handleSubmit}>
                 Share
-            </button>
-            <button onClick={handleDelete}>Delete</button>
+            </StyledButton>
+            <StyledButton onClick={handleDelete}>Delete</StyledButton>
         </StyledDiv>
     );
 };

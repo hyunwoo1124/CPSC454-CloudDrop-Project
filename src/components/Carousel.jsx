@@ -13,18 +13,20 @@ class CarouselImage extends Component {
                         <Carousel.Item>
                             <img
                                 className="d-block w-100"
-                                src ={laptopImage}
+                                src={laptopImage}
                                 alt="First slide"
                             />
                             <Carousel.Caption>
                                 <h3>Run in any platform</h3>
-                                <p>You can use CloudDrop anywhere in the world!</p>
+                                <p>
+                                    You can use CloudDrop anywhere in the world!
+                                </p>
                             </Carousel.Caption>
                         </Carousel.Item>
                         <Carousel.Item>
                             <img
                                 className="d-block w-100"
-                                src = {blueSkys}
+                                src={blueSkys}
                                 alt="Second Slide"
                             />
 
@@ -42,7 +44,10 @@ class CarouselImage extends Component {
 
                             <Carousel.Caption>
                                 <h3>Your storage is safe with us!</h3>
-                                <p>Borrowing AWS technologies with EC2 instances!</p>
+                                <p>
+                                    Borrowing AWS technologies with EC2
+                                    instances!
+                                </p>
                             </Carousel.Caption>
                         </Carousel.Item>
                     </Carousel>
@@ -51,4 +56,4 @@ class CarouselImage extends Component {
         );
     }
 }
-export default CarouselImage
+export default CarouselImage;

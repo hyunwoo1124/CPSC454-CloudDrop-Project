@@ -1,19 +1,44 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import styled from 'styled-components';
+import history from '../utils/history';
 
 const StyledDiv = styled.div`
-width: 400px;
-display: flex;
-flex-direction: column;
-align-itmes:center;
-justify-content: center;
-padding: 20px 40px;
-border-radius: 10px;
-box-shadow: 0px 10px 50px #555;
-background-color: #ffffff;
-margin: auto;
-position: absoluete;
+    width: 100%;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+`;
+
+const StyledForm = styled.div`
+    max-width: 600px;
+    padding: 40px;
+    width: 95%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    box-shadow: 0px 2px 4px #abaaaa;
+`;
+
+const StyledInput = styled.input`
+    width: 300px;
+    border-radius: 4px;
+    margin: 10px 0px 20px;
+`;
+
+const StyledButton = styled.button`
+    width: 150px;
+    margin: 10px auto;
+    border-radius: 4px;
+    background-color: #008aff;
+    color: white;
+
+    :hover {
+        background-color: #42a8ff;
+    }
 `;
 
 const NewImage = () => {
@@ -25,16 +50,28 @@ const NewImage = () => {
         await axios.post(`/api/images`, formData, {
             name: newImage.name
         });
+        history.push('/dashboard');
     };
 
     return (
-        <StyledDiv>
-           <input type="file" onChange={e => setNewImage(e.target.files[0])} />
-            <button type="submit" onClick={onSubmit}>
-                Upload
-            </button>
-        </StyledDiv>
-            
+        <>
+            <div style={{ margin: '30px' }}>
+                <h3 style={{ color: '#555555', letterSpacing: '-1px' }}>
+                    Upload
+                </h3>
+            </div>
+            <StyledDiv>
+                <StyledForm>
+                    <StyledInput
+                        type="file"
+                        onChange={e => setNewImage(e.target.files[0])}
+                    />
+                    <StyledButton type="submit" onClick={onSubmit}>
+                        Upload
+                    </StyledButton>
+                </StyledForm>
+            </StyledDiv>
+        </>
     );
 };
 

@@ -31,7 +31,6 @@ const Shared = () => {
     useEffect(() => {
         const fetchData = async () => {
             const images = await axios.get(`/api/share`);
-            console.log(images);
             let newImages = await Promise.all(
                 images.data.map(async image => {
                     const imageData = await axios.get(
@@ -49,21 +48,28 @@ const Shared = () => {
     }, []);
 
     return (
-        <StyledGrid>
-            {images
-                ? images.map(image => {
-                      return (
-                          <Link key={image.key} to={`/view/${image.key}`}>
-                              <StyledImage
-                                  key={image.key}
-                                  alt={image.key}
-                                  src={image.src}
-                              ></StyledImage>
-                          </Link>
-                      );
-                  })
-                : null}
-        </StyledGrid>
+        <>
+            <div style={{ margin: '30px' }}>
+                <h3 style={{ color: '#555555', letterSpacing: '-1px' }}>
+                    Shared with You
+                </h3>
+            </div>
+            <StyledGrid>
+                {images
+                    ? images.map(image => {
+                          return (
+                              <Link key={image.key} to={`/view/${image.key}`}>
+                                  <StyledImage
+                                      key={image.key}
+                                      alt={image.key}
+                                      src={image.src}
+                                  ></StyledImage>
+                              </Link>
+                          );
+                      })
+                    : null}
+            </StyledGrid>
+        </>
     );
 };
 

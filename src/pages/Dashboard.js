@@ -25,7 +25,7 @@ const StyledImage = styled.img`
     }
 `;
 
-const Dashboard = () => {
+const Dashboard = ({ auth }) => {
     const [images, setImages] = useState(null);
 
     useEffect(() => {
@@ -48,21 +48,34 @@ const Dashboard = () => {
     }, []);
 
     return (
-        <StyledGrid>
-            {images
-                ? images.map(image => {
-                      return (
-                          <Link key={image.key} to={`/images/${image.key}`}>
-                              <StyledImage
-                                  key={image.key}
-                                  alt={image.key}
-                                  src={image.src}
-                              ></StyledImage>
-                          </Link>
-                      );
-                  })
-                : null}
-        </StyledGrid>
+        <>
+            {auth ? (
+                <div style={{ margin: '30px' }}>
+                    <h3 style={{ color: '#555555', letterSpacing: '-1px' }}>
+                        Welcome, {auth.name}!
+                    </h3>
+                    <h5 style={{ color: '#555555', letterSpacing: '-1px' }}>
+                        {auth.imageCount} image
+                        {auth.imageCount === 1 ? '' : 's'}
+                    </h5>
+                </div>
+            ) : null}
+            <StyledGrid>
+                {images
+                    ? images.map(image => {
+                          return (
+                              <Link key={image.key} to={`/images/${image.key}`}>
+                                  <StyledImage
+                                      key={image.key}
+                                      alt={image.key}
+                                      src={image.src}
+                                  ></StyledImage>
+                              </Link>
+                          );
+                      })
+                    : null}
+            </StyledGrid>
+        </>
     );
 };
 
